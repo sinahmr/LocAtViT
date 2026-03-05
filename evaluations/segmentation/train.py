@@ -201,7 +201,6 @@ def main():
         if not backbone_args['model_kwargs'].get('class_token', True):  # When training with --gp, 'global_pool' is not set in the args as a model_kwarg
             backbone_args['model_kwargs']['global_pool'] = 'avg'
         cfg.model.backbone.update(backbone_args['model_kwargs'])
-    logger.info(cfg.model.backbone)
 
     model = build_segmentor(cfg.model, train_cfg=cfg.get('train_cfg'), test_cfg=cfg.get('test_cfg'))
     model.init_weights()

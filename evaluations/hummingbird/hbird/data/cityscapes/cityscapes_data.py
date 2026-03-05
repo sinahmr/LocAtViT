@@ -1,16 +1,13 @@
 import os
-import torch
-import numpy as np
-
-from PIL import Image
 from typing import Optional
 
+import numpy as np
 import pytorch_lightning as pl
-from torch.utils.data import DataLoader, Dataset
-import torchvision.transforms.functional as F
-
 import torch
+import torchvision.transforms.functional as F
 from PIL import Image
+from torch.utils.data import DataLoader, Dataset
+
 
 class Cityscapes(Dataset):
 

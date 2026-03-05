@@ -23,7 +23,7 @@ PATCH_SIZE = 16
 
 def evaluate(model_path, datasets):
     for dataset_name in datasets.keys():
-        run_args = yaml.safe_load((model_path / 'args.yaml').read_text())
+        run_args = yaml.safe_load((model_path.parent / 'args.yaml').read_text())
         model_name = run_args['model']
         output_index = 2 if 'swin' in model_name else 11
 
@@ -36,7 +36,7 @@ def evaluate(model_path, datasets):
             **run_args['model_kwargs']
         ).to(DEVICE)
 
-        incompatible_keys = load_checkpoint(model, (model_path / 'last.pth.tar').as_posix(),
+        incompatible_keys = load_checkpoint(model, model_path.as_posix(),
                                             use_ema=False, strict=True, filter_fn=None)
         print('Incompatible_keys: ', incompatible_keys)
         print('Encoder weights loaded successfully!')

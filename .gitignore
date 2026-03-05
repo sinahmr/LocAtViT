@@ -7,6 +7,7 @@ notes/
 output/
 scripts/
 vis/
+wandb/
 weights/
 
 data/slurm_extract_imagenet.sh
