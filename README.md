@@ -1,7 +1,7 @@
 # LocAtViT: Locality-Attending Vision Transformer
 
 <div align="center">
-<img src="./.assets/locatvit-illustration.png" width="25%">
+<img src="./.assets/locatvit-illustration.png" width="20%">
 <p></p>
 </div>
 
