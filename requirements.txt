@@ -1,0 +1,9 @@
+-f https://download.pytorch.org/whl/cu124
+
+numpy==1.26.4
+einops==0.8.0
+torch==2.4.1
+torchvision==0.19.1
+timm==1.0.19
+wandb==0.18.7
+# Optionally pillow-simd

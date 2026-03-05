@@ -1,0 +1,14 @@
+.idea
+.DS_Store
+dino/drac/
+drac/
+notes/
+output/
+scripts/
+vis/
+weights/
+
+data/slurm_extract_imagenet.sh
+
+__pycache__/
+*.pyc
