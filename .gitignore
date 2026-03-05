@@ -1,5 +1,6 @@
 .idea
 .DS_Store
+
 dino/drac/
 drac/
 notes/
@@ -9,6 +10,11 @@ vis/
 weights/
 
 data/slurm_extract_imagenet.sh
+data/valprep.sh
 
 __pycache__/
 *.pyc
+*.pyo
+*.egg-info/
+.env
+venv/
