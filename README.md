@@ -1,11 +1,13 @@
 # LocAtViT: Locality-Attending Vision Transformer
 
+[![arXiv](https://img.shields.io/badge/arXiv-2603.04892-b31b1b.svg)](https://arxiv.org/abs/2603.04892)
+
 <div align="center">
 <img src="./.assets/locatvit-illustration.png" width="25%">
 <p></p>
 </div>
 
-Official implementation of [**Locality-Attending Vision Transformer**](https://openreview.net/forum?id=KvEjv5klWi) (ICLR 2026).
+Official implementation of [**Locality-Attending Vision Transformer**](https://arxiv.org/abs/2603.04892) (ICLR 2026).
 
 > **TL;DR:** Pretrain vision transformers so their patch representations transfer better to dense prediction (e.g., segmentation), without changing the pretraining objective.
 
