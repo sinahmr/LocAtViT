@@ -163,24 +163,21 @@ class PRR(nn.Module):
 
     def __init__(
             self, dim: int, num_heads: int, nchw: bool = False,
-            norm_layer: Type[nn.Module] = nn.LayerNorm, pre_norm: bool = False, post_norm: bool = False,
+            pre_norm: bool = False, post_norm: bool = False, norm_layer: Type[nn.Module] = nn.LayerNorm,
     ):
         super().__init__()
         self.fused_attn = use_fused_attn()
         self.num_heads = num_heads
         self.scale = (dim // num_heads) ** -0.5
-        self.pre_norm, self.post_norm = nn.Identity(), nn.Identity()
-        if pre_norm:
-            self.pre_norm = norm_layer(dim)
-        elif post_norm:
-            self.post_norm = norm_layer(dim)
         self.nchw = nchw
+        self.pre_norm = norm_layer(dim) if pre_norm else nn.Identity()
+        self.post_norm = norm_layer(dim) if post_norm else nn.Identity()
 
     def forward(self, x: torch.Tensor):
-        x = self.pre_norm(x)
         shape = x.shape
         if self.nchw:
             x = x.movedim(1, -1)
+        x = self.pre_norm(x)
         x = x.flatten(1, -2)
         x = x.view(x.shape[0], x.shape[1], self.num_heads, -1).permute(0, 2, 1, 3)
         if self.fused_attn:
