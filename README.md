@@ -12,7 +12,7 @@
 
 Official implementation of [**Locality-Attending Vision Transformer**](https://arxiv.org/abs/2603.04892) (ICLR 2026).
 
-> **TL;DR:** Pretrain vision transformers so their patch representations transfer better to dense prediction (e.g., segmentation), without changing the pretraining objective.
+> **TL;DR:** Pretrain vision transformers so that their patch representations transfer better to dense prediction (e.g., segmentation), without changing the pretraining objective.
 
 <details>
 <summary><b>Abstract</b></summary>
@@ -77,11 +77,11 @@ Train on ImageNet and obtain the checkpoint used for downstream evaluations:
 ```
 </details>
 
-Pretrained LocAtViT models can be validated using the following commands:
+Pretrained LocAtViT models can be downloaded from Hugging Face and validated using the following commands:
 
 ```bash
-python validate.py --data-dir /path/to/imagenet --amp --pin-mem --num-classes 1000 --pretrained --model hf-hub:sinahmr/locatvit_tiny
-python validate.py --data-dir /path/to/imagenet --amp --pin-mem --num-classes 1000 --pretrained --model hf-hub:sinahmr/locatvit_base 
+python validate.py --model hf-hub:sinahmr/locatvit_tiny --pretrained --data-dir /path/to/imagenet --amp --pin-mem --num-classes 1000 
+python validate.py --model hf-hub:sinahmr/locatvit_base --pretrained --data-dir /path/to/imagenet --amp --pin-mem --num-classes 1000
 ```
 
 ## &#x1F9EA; Evaluations
