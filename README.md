@@ -1,6 +1,9 @@
 # LocAtViT: Locality-Attending Vision Transformer
 
 [![arXiv](https://img.shields.io/badge/arXiv-2603.04892-b31b1b.svg)](https://arxiv.org/abs/2603.04892)
+[![hfpaper](https://img.shields.io/badge/🤗%20HugginngFace-Paper-yellow)](https://huggingface.co/papers/2603.04892)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/sinahmr/LocAtViT/blob/main/LICENSE)
+
 
 <div align="center">
 <img src="./.assets/locatvit-illustration.png" width="25%">
@@ -74,6 +77,12 @@ Train on ImageNet and obtain the checkpoint used for downstream evaluations:
 ```
 </details>
 
+Pretrained LocAtViT models can be validated using the following commands:
+
+```bash
+python validate.py --data-dir /path/to/imagenet --amp --pin-mem --num-classes 1000 --pretrained --model hf-hub:sinahmr/locatvit_tiny
+python validate.py --data-dir /path/to/imagenet --amp --pin-mem --num-classes 1000 --pretrained --model hf-hub:sinahmr/locatvit_base 
+```
 
 ## &#x1F9EA; Evaluations
 

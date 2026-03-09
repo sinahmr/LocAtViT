@@ -1,5 +1,6 @@
 from typing import Optional, Type
 
+from huggingface_hub import PyTorchModelHubMixin
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -93,7 +94,12 @@ class GaussianAugmentedBlock(Block):
         self.drop_path2 = DropPath(drop_path) if drop_path > 0. else nn.Identity()
 
 
-class LocAtViT(VisionTransformer):
+class LocAtViT(
+    VisionTransformer,
+    PyTorchModelHubMixin,
+    repo_url='https://github.com/sinahmr/LocAtViT',
+    paper_url='https://arxiv.org/abs/2603.04892',
+):
     def __init__(
             self, *args,
             gaug: bool = True, prr: bool = True, no_pos_emb: bool = False, store_metrics: bool = True,
