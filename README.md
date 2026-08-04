@@ -141,9 +141,11 @@ If you find this work useful, please cite:
 
 ```bibtex
 @inproceedings{hajimiri2026locatvit,
-  author    = {Hajimiri, Sina and Beizaee, Farzad and Shakeri, Fereshteh and Desrosiers, Christian and Ben Ayed, Ismail and Dolz, Jose},
   title     = {Locality-Attending Vision Transformer},
+  author    = {Hajimiri, Sina and Beizaee, Farzad and Shakeri, Fereshteh and Desrosiers, Christian and Ben Ayed, Ismail and Dolz, Jose},
   booktitle = {International Conference on Learning Representations},
+  volume    = {2026},
+  pages     = {142913--142932},
   year      = {2026}
 }
 ```
