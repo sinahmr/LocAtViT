@@ -12,6 +12,8 @@
 
 Official implementation of [**Locality-Attending Vision Transformer**](https://arxiv.org/abs/2603.04892) (ICLR 2026).
 
+PRR is also available in `timm` (PyTorch Image Models), see [here](https://github.com/huggingface/pytorch-image-models/blob/899aa9420c60223cdd30ad345badec40c9021b0f/timm/layers/attention_pool.py#L140).
+
 > **TL;DR:** Pretrain vision transformers so that their patch representations transfer better to dense prediction (e.g., segmentation), without changing the pretraining objective.
 
 <details>
